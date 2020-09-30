@@ -5,6 +5,9 @@ public class AriesData {
     public String name;
     public String nameSw;
 
+    AriesData(){
+
+    }
     public AriesData(int id, String name, String nameSw) {
         this.id = id;
         this.name = name;

@@ -12,8 +12,10 @@ import java.net.URL;
 public class WebpageRead {
     String line;
     StringBuffer reponseContent;
+    String data = "";
 
-    protected  void  getWebPages() throws IOException {
+
+    public String getWebPages() throws IOException {
         URL url = new URL(webPageSource.urlPath);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
@@ -23,7 +25,7 @@ public class WebpageRead {
           BufferedReader  errorReader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
 
           while((line = errorReader.readLine()) != null){
-              //reponseContent.append(line);
+              reponseContent.append(line);
           }
           System.out.println(connection.getResponseMessage());
           System.out.println();
@@ -34,7 +36,7 @@ public class WebpageRead {
                 InputStream reader = connection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(reader));
                 String readLine = bufferedReader.readLine();
-                String data = "";
+
 
                 while (readLine != null) {
 
@@ -44,10 +46,14 @@ public class WebpageRead {
                 }
                 System.out.println(data);
 
+
             } catch (MalformedURLException e) {
                 e.printStackTrace();
 
             }
 
         }
-    }}
+
+        return data;
+    }
+}
