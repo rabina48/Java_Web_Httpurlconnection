@@ -22,41 +22,40 @@ import java.util.List;
 public class AriesParser {
 
 
-    public  void get() {
-        JSONObject object = new JSONObject();
-        JSONArray jsonArray = new JSONArray("data");
-    }
-
-
-    protected AriesInformation getAriesInformation(JSONObject object) {
+//    public  void get(String data) throws IOException {
+//
+//
+//
+//    }
+    protected AriesInformation getAriesInformation(String data) {
+        JSONObject object = new JSONObject(data);
 
         AriesInformation ariesInfo = new AriesInformation();
         ariesInfo.code = object.getInt("code");
         ariesInfo.success = object.getBoolean("success");
         ariesInfo.message = object.getString("message");
-        ariesInfo.data =  getAriesData(jsonArray);
+
+
+
+        JSONArray requiredArr = object.getJSONArray("data");
+        AriesData ariesData = new AriesData();
+        ariesData.id = requiredArr.getJSONObject(1).getInt("id");
+        ariesData.name =requiredArr.getJSONObject(1).getString("name");
+        ariesData.nameSw = requiredArr.getJSONObject(1).getString("nameSw");
+       // ariesInfo.data = ariesData;
+
+        List<AriesData> data1 = new ArrayList<>();
+        for (int i = 0; i < requiredArr.length(); i++) {
+//            System.out.println("===========================================");
+//            System.out.println(" id = " + (requiredArr.getJSONObject(i)).getInt("id"));
+//            System.out.println(" and  name = " + (requiredArr.getJSONObject(i)).get("name"));
+//            System.out.println(" and  name = " + (requiredArr.getJSONObject(i)).get("nameSw"));
+//            System.out.println("===========================================");
+        }
+
+       data1.add(ariesData);
 
         return ariesInfo;
-
-    }
-
-    protected AriesData getAriesData(JSONArray jsonArray) {
-
-
-        JSONObject ob = new JSONObject();
-        AriesData ariesData = new AriesData();
-        ariesData.id = ob.getInt("id");
-        ariesData.name =ob.getString("name");
-        ariesData.nameSw = ob.getString("nameSw");
-
-        List<Data> data = new ArrayList<>();
-       for(int i = 0; i< jsonArray.length(); i++){
-           String arrayValue = jsonArray.getString(i);
-           data.add(arrayValue);
-       }
-
-
-        return ariesData;
 
     }
 
