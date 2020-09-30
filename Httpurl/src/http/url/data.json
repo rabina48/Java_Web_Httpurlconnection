@@ -1,0 +1,57 @@
+{
+  "code": 200,
+  "success": true,
+  "message": "Success",
+  "data": [
+    {
+      "id": 1,
+      "name": "Region",
+      "nameSw": "Mkoa"
+    },
+    {
+      "id": 2,
+      "name": "Mega City Council",
+      "nameSw": "Halmashauri la Jiji Kubwa"
+    },
+    {
+      "id": 3,
+      "name": "District",
+      "nameSw": "Wilaya"
+    },
+    {
+      "id": 4,
+      "name": "Council",
+      "nameSw": "Halmashauri"
+    },
+    {
+      "id": 5,
+      "name": "Special Area",
+      "nameSw": "Eneo Maalum"
+    },
+    {
+      "id": 6,
+      "name": "Division",
+      "nameSw": "Tarafa"
+    },
+    {
+      "id": 7,
+      "name": "Township Authority",
+      "nameSw": "Mamlaka ya Mji Mdogo"
+    },
+    {
+      "id": 8,
+      "name": "Ward",
+      "nameSw": "Kata"
+    },
+    {
+      "id": 9,
+      "name": "Village/Mtaa",
+      "nameSw": "Kijiji/Mtaa"
+    },
+    {
+      "id": 10,
+      "name": "Kitongoji",
+      "nameSw": "Kitongoji"
+    }
+  ]
+}

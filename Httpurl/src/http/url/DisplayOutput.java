@@ -9,7 +9,7 @@ public class DisplayOutput {
 
 
           System.out.println("===========================================");
-          System.out.println(" id = " + ariesInfo.data.get(1).id+ "name "+ariesInfo.data.get(1).name+ "nameSw"+ariesInfo.data.get(1).nameSw);
+          System.out.println(" id = " + ariesInfo.data.get(0).id+ " & the name = "+ariesInfo.data.get(0).name+ " & nameSw = "+ariesInfo.data.get(0).nameSw);
 
 
     }

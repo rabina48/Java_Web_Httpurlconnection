@@ -34,26 +34,23 @@ public class AriesParser {
         ariesInfo.code = object.getInt("code");
         ariesInfo.success = object.getBoolean("success");
         ariesInfo.message = object.getString("message");
-
-
-
         JSONArray requiredArr = object.getJSONArray("data");
         AriesData ariesData = new AriesData();
-        ariesData.id = requiredArr.getJSONObject(1).getInt("id");
-        ariesData.name =requiredArr.getJSONObject(1).getString("name");
-        ariesData.nameSw = requiredArr.getJSONObject(1).getString("nameSw");
+
+
        // ariesInfo.data = ariesData;
 
         List<AriesData> data1 = new ArrayList<>();
         for (int i = 0; i < requiredArr.length(); i++) {
-//            System.out.println("===========================================");
-//            System.out.println(" id = " + (requiredArr.getJSONObject(i)).getInt("id"));
-//            System.out.println(" and  name = " + (requiredArr.getJSONObject(i)).get("name"));
-//            System.out.println(" and  name = " + (requiredArr.getJSONObject(i)).get("nameSw"));
-//            System.out.println("===========================================");
+            ariesData.id = requiredArr.getJSONObject(i).getInt("id");
+            ariesData.name =requiredArr.getJSONObject(i).getString("name");
+            ariesData.nameSw = requiredArr.getJSONObject(i).getString("nameSw");
+//
         }
 
        data1.add(ariesData);
+        ariesInfo.data = data1;
+
 
         return ariesInfo;
 
